@@ -1,0 +1,55 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/*
+=============== 
+Variables
+===============
+*/
+:root {
+  --ff-primary: "Open Sans", sans-serif;
+  --ff-secondary: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: var(--ff-primary);
+}
+
+.container {
+  max-width: 1500px;
+  display: flex;
+  margin: 0 auto;
+}
+
+nav.nav {
+  @media (max-width: 599px) {
+    width: 100%;
+  }
+  background: #000;
+  width: 100%;
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  .nav-menu {
+    color: aliceblue;
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+    gap: 50px;
+  }
+}

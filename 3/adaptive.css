@@ -1,0 +1,31 @@
+@media (max-width: 1024px){
+    #menu ul{
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 700px){
+    #menu ul li {
+        font-weight: 300;
+    }
+}
+
+
+@media (max-width: 480px){
+    #menu ul  {
+        font-size: 16px;
+        gap: 0;
+        
+
+    #menu ul li {
+       
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 480px){
+   #main{
+    flex-direction: column;
+   }
+}
