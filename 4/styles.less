@@ -33,6 +33,9 @@ h3 {
 ul {
   list-style: none;
 }
+hr {
+  border: none;
+}
 
 .container {
   max-width: 1500px;
@@ -451,6 +454,96 @@ nav.nav {
 }
 
 .customers-block {
-  min-height: 500px;
+  min-height: 560px;
   background-color: #fff;
+  display: flex;
+  align-items: center;
+
+  .customers-container {
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+      text-align: center;
+      h3 {
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 4px;
+      }
+      .divider {
+        width: 150px;
+        height: 3px;
+        margin: 20px auto;
+        border: none;
+        background-color: #ff8b38;
+      }
+      .caption {
+        color: #a4a5a8;
+      }
+    }
+
+    .customers_reviews {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      .customer {
+        flex: 1;
+        max-width: 25%;
+        .text {
+          font-style: italic;
+          padding: 15px 10px;
+          background-color: #f5f5f5;
+          color: #a4a5a8;
+        }
+        .profile {
+          margin-top: 30px;
+          display: flex;
+          justify-content: flex-start;
+          gap: 10px;
+          .avatar {
+          }
+          .name {
+            color: #333333;
+            font-size: 20px;
+            font-weight: 700;
+          }
+          .spec {
+            color: #a4a5a8;
+          }
+        }
+      }
+    }
+  }
+}
+
+.stylish {
+  height: 400px;
+  background: url();
+
+  .stylish-container {
+    height: 100%;
+    border: 1px solid #333333;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    .header {
+      text-transform: uppercase;
+      font-size: 50px;
+    }
+    .divider {
+      width: 100px;
+      height: 3px;
+      border: none;
+      background-color: #ff8b38;
+      margin: 0 auto;
+    }
+    .caption {
+      font-size: 16px;
+      font-weight: 300;
+    }
+    .btn {
+    }
+  }
 }
