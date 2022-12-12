@@ -50,6 +50,15 @@ hr {
   width: 100%;
   display: flex;
   margin: 0 auto;
+  @media (max-width: 1600px) {
+    margin: 0 60px;
+  }
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .btn {
@@ -74,13 +83,15 @@ input:focus {
 }
 
 nav.nav {
-  @media (max-width: 599px) {
-    width: 100%;
-  }
   background: #000;
-  width: 100%;
 
   .nav-container {
+    @media (max-width: 960px) {
+      // margin: 0;
+      .logo {
+        display: none;
+      }
+    }
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
@@ -98,10 +109,16 @@ nav.nav {
 .upper-section {
   background-image: url("./src/img/background_city.png");
   background-size: cover;
-  height: 840px;
+  min-height: 840px;
   display: flex;
   align-items: center;
   .upper-section-container {
+    @media (max-width: 960px) {
+      margin: 50px 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
     justify-content: space-between;
 
     .text-section {
@@ -128,7 +145,7 @@ nav.nav {
       }
 
       .download-btn {
-        margin-top: 40px;
+        margin: 40px 0;
         border-color: #fff;
         color: #fff;
       }
@@ -194,9 +211,16 @@ nav.nav {
     }
     .icons-block {
       display: flex;
+      align-items: center;
       gap: 60px;
+      @media (max-width: 1200px) {
+        margin-top: 40px;
+      }
       i {
         color: #cccccc;
+        @media (max-width: 1200px) {
+          font-size: 2rem;
+        }
       }
     }
   }
@@ -207,7 +231,7 @@ nav.nav {
   z-index: 1;
   display: flex;
   align-items: center;
-  height: 600px;
+  min-height: 600px;
   background-color: #f5f5f5;
   .tabs-section-container {
     justify-content: space-between;
@@ -259,13 +283,13 @@ nav.nav {
 .standard-picture {
   display: flex;
   align-items: center;
-  height: 600px;
+  min-height: 600px;
   .sub-list-container {
     justify-content: space-between;
     .img_block {
       min-width: 45%;
       display: block;
-      height: 400px;
+      min-height: 400px;
       background: url("./src/img/image_left_sub_list_u260.png");
       background-repeat: no-repeat;
       background-size: cover;
@@ -324,7 +348,7 @@ nav.nav {
 }
 
 .awesome-block {
-  height: 600px;
+  min-height: 600px;
   display: flex;
   align-items: center;
   text-align: center;
