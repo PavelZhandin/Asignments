@@ -1,0 +1,12 @@
+.container {
+  /* display: flex; */
+  display: inline;
+  border: 2px solid #000;
+  width: 50%;
+  height: 50%;
+}
+
+.innerContainer-0 {
+  width: 100%;
+  height: 100vh;
+}
