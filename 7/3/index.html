@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="buttons">
+        <button data-amount="100">Load 100</button>
+        <button data-amount="500">Load 500</button>
+        <button data-amount="1000">Load 1000</button>
+      </div> -->
+      <form id = 'form' action="#">
+        <fieldset>
+          <legend>Items amount:</legend>
+          <div>
+            <input type="radio" name="amount" value="100" checked />
+            <label for="contactChoice1">100</label>
+            <input type="radio" name="amount" value="500" />
+            <label for="contactChoice2">500</label>
+            <input type="radio" name="amount" value="1000" />
+            <label for="contactChoice3">1000</label>
+          </div>
+          <div>
+            <input type="radio" name="type" value="rss" checked/>
+            <label for="contactChoice1">rss</label>
+            <input type="radio" name="type" value="json" />
+            <label for="contactChoice2">json</label>
+          </div>
+        </fieldset>
+          <div>
+            <button type="submit">Load</button>
+          </div>
+      </form>
+      <table class="table">
+        <tr>
+          <th></th>
+          <th>100 items</th>
+          <th>500 items</th>
+          <th>1000 items</th>
+        </tr>
+        <tr>
+          <td>RSS:</td>
+          <td class="rss100"></tdc>
+          <td class="rss500"></tdc>
+          <td class="rss1000"></tdc>
+          
+        </tr>
+        <tr>
+          <td>JSON:</td>
+          <td class="json100"></td>
+          <td class="json500"></td>
+          <td class="json1000"></td>
+          
+        </tr>
+      </table>
+      <div class="data_container"></div>
+    </div>
+  </body>
+  <!-- <script src="./scriptJSON.js"></script> -->
+  <script src="./scriptRSS.js"></script>
+</html>

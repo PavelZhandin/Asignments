@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+	<title>Генератор RSS-абракадабры</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+		body {font: normal 13pt 'Roboto Condensed',Tahoma,Arial,sans-serif;}
+		.b-input__title {padding-bottom:15px;border-bottom:1px solid #ccc;}
+		.b-inputform fieldset {margin:0;padding:0;border:0;}
+		.b-inputform legend {display:none;}
+		.b-inputform__block {margin:0 0 10px;}
+		.b-inputform__block label {display:inline-block;width:220px;}
+		.b-inputform__block input[type='text'] {display:inline-block;width:50px;}
+		.b-inputform__block input[type='button'] {display:inline-block;margin-left:224px;}
+		.b-output__title {padding-bottom:15px;border-bottom:1px solid #ccc;}
+		.b-outputform fieldset {margin:0;padding:0;border:0;}
+		.b-outputform legend {display:none;}
+		.b-outputform textarea {box-sizing:border-box;width:100%;height:500px;}
+	</style>
+</head>
+<body>
+
+	<header class="b-header">
+		<h1 class="b-header__title">Генератор RSS-абракадабры</h1>
+	</header>
+
+	<main class="b-main">
+
+		<section class="b-input">
+			<h2 class="b-input__title">Входные параметры</h2>
+			<form class="b-inputform">
+				<fieldset>
+					<legend>Входные параметры</legend>
+					<div class="b-inputform__block">
+						<label>Длина title min-max:</label>
+						<input type="text" name="minTitle" value="20"> - <input type="text" name="maxTitle" value="50">
+					</div>
+					<div class="b-inputform__block">
+						<label>Длина description min-max:</label>
+						<input type="text" name="minDesc" value="1000"> - <input type="text" name="maxDesc" value="2000">
+					</div>
+					<div class="b-inputform__block">
+						<label>Количество новостей:</label>
+						<input type="text" name="newsNum" value="100">
+					</div>
+					<div class="b-inputform__block">
+						<input type="button" value="Поехали!" onClick="document.getElementById('output').value=genRSS(this.form.newsNum.value,this.form.minTitle.value,this.form.maxTitle.value,this.form.minDesc.value,this.form.maxDesc.value);">
+					</div>
+
+				</fieldset>
+			</form>
+		</section>
+
+		<section class="b-output">
+			<h2 class="b-output__title">Результат</h2>
+			<form class="b-outputform">
+				<fieldset>
+					<legend>Результат</legend>
+					<textarea id="output"></textarea>
+				</fieldset>
+			</form>
+		</section>
+	</main>
+
+	<footer class="b-footer">
+		<p class="b-footer__copyright">&copy; luky.jinr.ru</p>
+	</footer>
+
+<script>
+
+var alfabet=['а','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я'];
+var minWordLength=1;
+var maxWordLength=10;
+
+function genWord(min,max) {
+	var curLength=min+Math.floor((max-min)*Math.random());
+	var curWord='';
+	var curSymbolNumber=0;
+	while(curWord.length<curLength) {
+		curSymbolNumber=Math.floor(Math.random()*alfabet.length);
+		curWord+=alfabet[curSymbolNumber];
+		}
+	return curWord;
+	}
+
+function genText(min,max) {
+	var curTextLength=min + Math.floor((max-min)*Math.random());
+	var curText='';
+	while(curText.length < curTextLength) {
+		curText+=genWord(minWordLength,maxWordLength)+' ';
+		}
+	return curText;
+	}
+
+function genRSS(newsNum,minTitle,maxTitle,minDesc,maxDesc) {
+	var curdate=new Date();
+	var output='';
+	output+='<?xml version="1.0" encoding="utf-8"?>\n';
+	output+='<rss version="2.0">\n';
+	output+='	<channel>\n';
+	output+='		<title>RSS-абракадабра, '+newsNum*1+' новостей.</title>\n';
+	output+='		<link>http://luky.jinr.ru/rssgen/</link>\n';
+	output+='		<description>Создано c помощью указанного в ссылке генератора абракадабры</description>\n';
+	output+='		<language>ru</language>\n';
+	for(var i=0;i<newsNum*1;i++) {
+		output+='		<item>\n';
+		output+='			<title>'+genText(minTitle*1,maxTitle*1)+'</title>\n';
+		output+='			<link>http://luky.jinr.ru/rssgen/'+genWord(5,5)+'.html</link>\n';
+		output+='			<pubDate>'+curdate.toUTCString()+'</pubDate>\n';
+		output+='			<description>'+genText(minDesc*1,maxDesc*1)+'</description>\n';
+		output+='		</item>\n';
+		}
+	output+='	</channel>\n';
+	output+='</rss>';
+	return output;
+	}
+
+
+
+
+</script>
+
+</body>
+</html>
