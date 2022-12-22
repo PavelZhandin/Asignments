@@ -1,0 +1,16 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title {
+  font-size: 24px;
+  letter-spacing: 0.4rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.desc {
+  line-height: 1.4rem;
+  font-size: 1.1rem;
+}
