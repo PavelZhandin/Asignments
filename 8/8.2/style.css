@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+}
+article {
+  margin: 0px 25px 50px 25px;
+}
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 25px;
+  border: 2px solid black;
+  padding: 40px 90px;
+  text-align: justify;
+  background-color: white;
+}
+h2 {
+  font-size: 30px;
+  text-align: center;
+  margin: 20px;
+}
+p {
+  font-size: 24px;
+  line-height: 1.5;
+}
